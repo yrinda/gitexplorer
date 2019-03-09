@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Toggle from './toggle';
 
-const Nav = ({ fastType, mode, onToggle }) => (
+const Nav = ({ normalType, mode, onToggle }) => (
   <nav className="nav">
     <Toggle
-      checked={fastType}
-      leftLabel="Normal type speed"
-      name="fastType"
+      checked={normalType}
+      leftLabel="Slow type speed"
+      name="normalType"
       onChange={onToggle}
-      rightLabel="Fast type speed"
+      rightLabel="Normal type speed"
     />
     <Toggle
       checked={mode}
@@ -22,7 +22,7 @@ const Nav = ({ fastType, mode, onToggle }) => (
 );
 
 Nav.propTypes = {
-  fastType: PropTypes.bool,
+  normalType: PropTypes.bool,
   mode: PropTypes.bool,
   onToggle: PropTypes.func,
 };

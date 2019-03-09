@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       dark: JSON.parse(localStorage.getItem('dark')) || false,
-      fastType: JSON.parse(localStorage.getItem('fastType')) || false,
+      normalType: JSON.parse(localStorage.getItem('normalType')) || false,
       firstOption: null,
       showSecond: false,
       secondOption: null,
@@ -122,17 +122,17 @@ class App extends Component {
       thirdOption,
       showSecond,
       showThird,
-      fastType,
+      normalType,
       nb,
       usage,
       copied
     } = this.state;
-    const avgTypingDelay = fastType ? 0 : 50;
+    const avgTypingDelay = normalType ? 0 : 50;
 
     return (
       <div className={classnames('home', { dark })}>
         <div className="container home__container">
-          <Nav mode={dark} onToggle={this.handleToggle} fastType={fastType} />
+          <Nav mode={dark} onToggle={this.handleToggle} normalType={normalType} />
           <div className="content">
             <div className="row">
               <div className="col-5">
@@ -193,8 +193,8 @@ class App extends Component {
                           {usage}
                         </Typist>
                       ) : (
-                        <div />
-                      )}
+                          <div />
+                        )}
                     </pre>
                     {usage.length ? (
                       <div className="copy">
